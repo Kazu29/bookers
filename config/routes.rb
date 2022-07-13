@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
+  #ルートパスの設定
   root to: 'homes#top'
-
-  get '/books' =>'books#index'
-  post '/books' => 'books#create'
-
-  get '/books/:id' =>'books#show', as: 'book'
-  get 'books/:id/edit' => 'books#edit', as: 'edit_book'
-  patch 'book/:id' => 'books#update', as: 'update_book'
+  
+  resources :books
 end
